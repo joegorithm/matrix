@@ -1,2 +1,2 @@
-# matrix
-Matrix Calculator
+# Matrix Calculator
+Testing with matrix multiplication
