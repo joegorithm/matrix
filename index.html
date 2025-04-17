@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Calculator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <section class="matrices">
+        <div class="matrix-container">
+            <div class="matrix-left-bracket"></div>
+            <table id="matrix-a" class="matrix">
+                <tr>
+                    <td>
+                        <input type="number" class="matrix-element" value="1">
+                    </td>
+                    <td>
+                        <input type="number" class="matrix-element" value="0">
+                    </td>
+                    <td>
+                        <input type="number" class="matrix-element" value="0">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="number" class="matrix-element" value="0">
+                    </td>
+                    <td>
+                        <input type="number" class="matrix-element" value="1">
+                    </td>
+                    <td>
+                        <input type="number" class="matrix-element" value="0">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="number" class="matrix-element" value="0">
+                    </td>
+                    <td>
+                        <input type="number" class="matrix-element" value="0">
+                    </td>
+                    <td>
+                        <input type="number" class="matrix-element" value="1">
+                    </td>
+                </tr>
+            </table>
+            <div class="matrix-right-bracket"></div>
+        </div>
+        <span>×</span>
+        <div class="matrix-container">
+            <div class="matrix-left-bracket"></div>
+            <table id="matrix-b" class="matrix">
+                <tr>
+                    <td>
+                        <input type="number" class="matrix-element" value="1">
+                    </td>
+                    <td>
+                        <input type="number" class="matrix-element" value="2">
+                    </td>
+                    <td>
+                        <input type="number" class="matrix-element" value="3">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="number" class="matrix-element" value="4">
+                    </td>
+                    <td>
+                        <input type="number" class="matrix-element" value="0">
+                    </td>
+                    <td>
+                        <input type="number" class="matrix-element" value="2">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="number" class="matrix-element" value="3">
+                    </td>
+                    <td>
+                        <input type="number" class="matrix-element" value="0">
+                    </td>
+                    <td>
+                        <input type="number" class="matrix-element" value="1">
+                    </td>
+                </tr>
+            </table>
+            <div class="matrix-right-bracket"></div>
+        </div>
+        <span>=</span>
+        <div class="matrix-container">
+            <div class="matrix-left-bracket"></div>
+            <table id="matrix-result" class="matrix">
+                <tr>
+                    <td>
+                        <input type="number" class="matrix-element" disabled>
+                    </td>
+                    <td>
+                        <input type="number" class="matrix-element" disabled>
+                    </td>
+                    <td>
+                        <input type="number" class="matrix-element" disabled>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="number" class="matrix-element" disabled>
+                    </td>
+                    <td>
+                        <input type="number" class="matrix-element" disabled>
+                    </td>
+                    <td>
+                        <input type="number" class="matrix-element" disabled>
+                    </td>
+                </tr><tr>
+                    <td>
+                        <input type="number" class="matrix-element" disabled>
+                    </td>
+                    <td>
+                        <input type="number" class="matrix-element" disabled>
+                    </td>
+                    <td>
+                        <input type="number" class="matrix-element" disabled>
+                    </td>
+                </tr>
+            </table>
+            <div class="matrix-right-bracket"></div>
+        </div>
+    </section>
+</body>
+</html>
