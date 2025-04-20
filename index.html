@@ -21,124 +21,204 @@
 <body>
     <h1>Matrix Multiplication</h1>
     <section class="matrices">
-        <div class="matrix-container">
-            <div class="matrix-left-bracket"></div>
-            <table id="matrix-a" class="matrix">
-                <tr>
-                    <td>
-                        <input type="number" class="matrix-element">
-                    </td>
-                    <td>
-                        <input type="number" class="matrix-element">
-                    </td>
-                    <td>
-                        <input type="number" class="matrix-element">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="number" class="matrix-element">
-                    </td>
-                    <td>
-                        <input type="number" class="matrix-element">
-                    </td>
-                    <td>
-                        <input type="number" class="matrix-element">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="number" class="matrix-element">
-                    </td>
-                    <td>
-                        <input type="number" class="matrix-element">
-                    </td>
-                    <td>
-                        <input type="number" class="matrix-element">
-                    </td>
-                </tr>
-            </table>
-            <div class="matrix-right-bracket"></div>
+
+        <!-- First matrix -->
+        <div class="matrix-outer-container">
+            <div class="matrix-container">
+                <div class="matrix-left-controls">
+                    <input type="number" class="matrix-scalar" value="1">
+                </div>
+                <div class="matrix-inner-container">
+                    <div class="matrix-left-bracket"></div>
+                    <table id="matrix-a" class="matrix">
+                        <tr>
+                            <td>
+                                <input type="number" class="matrix-element">
+                            </td>
+                            <td>
+                                <input type="number" class="matrix-element">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="number" class="matrix-element">
+                            </td>
+                            <td>
+                                <input type="number" class="matrix-element">
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="matrix-right-bracket"></div>
+                </div>
+                <div class="matrix-right-controls">
+                    <button class="matrix-control-button matrix-control-button-vertical add-column">
+                        <svg class="matrix-control-button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                            <path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"/>
+                        </svg>
+                    </button>
+                    <button class="matrix-control-button matrix-control-button-vertical remove-column">
+                        <svg class="matrix-control-button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                            <path d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="matrix-bottom-controls">
+                <button class="matrix-control-button matrix-control-button-horizontal add-row">
+                    <svg class="matrix-control-button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                        <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/>
+                    </svg>
+                </button>
+                <button class="matrix-control-button matrix-control-button-horizontal remove-row">
+                    <svg class="matrix-control-button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                        <path d="M182.6 137.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8l256 0c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z"/>
+                    </svg>
+                </button>
+            </div>
         </div>
+
+        <!-- Operation symbol -->
+
         <span class="opperation-symbol">×</span>
-        <div class="matrix-container">
-            <div class="matrix-left-bracket"></div>
-            <table id="matrix-b" class="matrix">
-                <tr>
-                    <td>
-                        <input type="number" class="matrix-element">
-                    </td>
-                    <td>
-                        <input type="number" class="matrix-element">
-                    </td>
-                    <td>
-                        <input type="number" class="matrix-element">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="number" class="matrix-element">
-                    </td>
-                    <td>
-                        <input type="number" class="matrix-element">
-                    </td>
-                    <td>
-                        <input type="number" class="matrix-element">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="number" class="matrix-element">
-                    </td>
-                    <td>
-                        <input type="number" class="matrix-element">
-                    </td>
-                    <td>
-                        <input type="number" class="matrix-element">
-                    </td>
-                </tr>
-            </table>
-            <div class="matrix-right-bracket"></div>
+
+        <!-- Second matrix -->
+        <div class="matrix-outer-container">
+            <div class="matrix-container">
+                <div class="matrix-left-controls">
+                    <input type="number" class="matrix-scalar" value="1">
+                </div>
+                <div class="matrix-inner-container">
+                    <div class="matrix-left-bracket"></div>
+                    <table id="matrix-b" class="matrix">
+                        <tr>
+                            <td>
+                                <input type="number" class="matrix-element">
+                            </td>
+                            <td>
+                                <input type="number" class="matrix-element">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="number" class="matrix-element">
+                            </td>
+                            <td>
+                                <input type="number" class="matrix-element">
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="matrix-right-bracket"></div>
+                </div>
+                <div class="matrix-right-controls">
+                    <button class="matrix-control-button matrix-control-button-vertical add-column">
+                        <svg class="matrix-control-button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                            <path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"/>
+                        </svg>
+                    </button>
+                    <button class="matrix-control-button matrix-control-button-vertical remove-column">
+                        <svg class="matrix-control-button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                            <path d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="matrix-bottom-controls">
+                <button class="matrix-control-button matrix-control-button-horizontal add-row">
+                    <svg class="matrix-control-button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                        <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/>
+                    </svg>
+                </button>
+                <button class="matrix-control-button matrix-control-button-horizontal remove-row">
+                    <svg class="matrix-control-button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                        <path d="M182.6 137.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8l256 0c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z"/>
+                    </svg>
+                </button>
+            </div>
         </div>
+
+        <!-- Equals sign -->
         <span class="opperation-symbol">=</span>
-        <div class="matrix-container">
-            <div class="matrix-left-bracket"></div>
-            <table id="matrix-result" class="matrix">
-                <tr>
-                    <td>
-                        <input type="number" class="matrix-element" disabled>
-                    </td>
-                    <td>
-                        <input type="number" class="matrix-element" disabled>
-                    </td>
-                    <td>
-                        <input type="number" class="matrix-element" disabled>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="number" class="matrix-element" disabled>
-                    </td>
-                    <td>
-                        <input type="number" class="matrix-element" disabled>
-                    </td>
-                    <td>
-                        <input type="number" class="matrix-element" disabled>
-                    </td>
-                </tr><tr>
-                    <td>
-                        <input type="number" class="matrix-element" disabled>
-                    </td>
-                    <td>
-                        <input type="number" class="matrix-element" disabled>
-                    </td>
-                    <td>
-                        <input type="number" class="matrix-element" disabled>
-                    </td>
-                </tr>
-            </table>
-            <div class="matrix-right-bracket"></div>
+
+        <!-- Resultant matrix -->
+        <div class="matrix-outer-container">
+            <div class="matrix-container">
+                <!-- <div class="matrix-left-controls">
+                    <input type="number" class="matrix-scalar" value="1">
+                </div> -->
+                <div class="matrix-inner-container">
+                    <div class="matrix-left-bracket"></div>
+                    <table id="matrix-result" class="matrix">
+                        <tr>
+                            <td>
+                                <input type="number" class="matrix-element" readonly>
+                            </td>
+                            <td>
+                                <input type="number" class="matrix-element" readonly>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="number" class="matrix-element" readonly>
+                            </td>
+                            <td>
+                                <input type="number" class="matrix-element" readonly>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="matrix-right-bracket"></div>
+                </div>
+                <!-- <div class="matrix-right-controls"> -->
+                    <!-- <button class="matrix-control-button matrix-control-button-vertical"> -->
+                        <!-- <svg class="matrix-control-button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"> -->
+                            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                            <!-- <path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"/> -->
+                        <!-- </svg> -->
+                    <!-- </button> -->
+                    <!-- <button class="matrix-control-button matrix-control-button-vertical"> -->
+                        <!-- <svg class="matrix-control-button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"> -->
+                            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                            <!-- <path d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z"/> -->
+                        <!-- </svg> -->
+                    <!-- </button> -->
+                <!-- </div> -->
+            </div>
+            <!-- <div class="matrix-bottom-controls"> -->
+                <!-- <button class="matrix-control-button matrix-control-button-horizontal"> -->
+                    <!-- <svg class="matrix-control-button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"> -->
+                        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                        <!-- <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/> -->
+                    <!-- </svg> -->
+                <!-- </button> -->
+                <!-- <button class="matrix-control-button matrix-control-button-horizontal"> -->
+                    <!-- <svg class="matrix-control-button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"> -->
+                        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                        <!-- <path d="M182.6 137.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8l256 0c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z"/> -->
+                    <!-- </svg> -->
+                <!-- </button> -->
+            <!-- </div> -->
+        </div>
+
+    </section>
+    <section class="section-2">
+        <div class="error-message-banner">
+            <svg class="error-message-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480L40 480c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24l0 112c0 13.3 10.7 24 24 24s24-10.7 24-24l0-112c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/>
+            </svg>
+            <p id="error-message"></p>
         </div>
     </section>
+    <!-- <nav>
+        <button>Addition</button>
+        <button>Multiplication</button>
+    </nav> -->
 </body>
 </html>

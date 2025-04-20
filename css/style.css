@@ -1,80 +1,184 @@
+/******* GENERAL SETUP *******/
+:root {
+    --theme-color: rgb(208, 255, 0);
+    --background-color: rgb(0, 0, 0);
+    --foreground-color: rgb(255, 255, 255);
+    --element-color: rgb(16, 16, 19);
+    --ui-color: rgb(22, 25, 30);
+    --ui-hover-color: rgb(27, 30, 36);
+}
+
 body {
-    background-color: black;
-    color: white;
-    box-sizing: border-box;
+    background-color: var(--background-color);
+    color: var(--foreground-color);
     font-family: "Nunito", sans-serif;
     font-size: 1.5rem;
-    margin: 1rem;
+    margin: 0;
+    padding: 0;
     text-align: center;
+    /* height: 100dvh; */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: rgba(208, 255, 0, 0.2);
+    color: var(--theme-color);
 }
 
 .opperation-symbol {
     font-size: 3rem;
     font-weight: 700;
+    font-family: sans-serif;
 }
 
 .matrices {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    /* gap: 5rem; */
+    gap: 1rem;
+}
+
+
+
+/******* MATRIX STYLES *******/
+.matrix-outer-container {
+    display: flex;
+    flex-direction: column;
 }
 
 .matrix-container {
     display: flex;
-    /* background-color: rgb(143, 164, 188); */
+}
+
+.matrix-inner-container {
+    position: relative;
+    display: flex;
+    background-color: var(--element-color);
 }
 
 .matrix {
     background: none;
-    border-spacing: 1rem 1rem;
+    border-spacing: 0.5rem;
     border-collapse: separate;
-    padding: 0.5rem 0
+    padding: 0.5rem 0.5rem;
+}
+
+.matrix-left-controls {
+    background-color: var(--element-color);
+    /* height: calc(100% -2rem); */
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.matrix-right-controls {
+    background-color: var(--element-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.matrix-bottom-controls {
+    position: relative;
+    left: 4rem;
+    width: calc(100% - 7rem);
+    background-color: var(--element-color);
+    padding: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
 }
 
 .matrix-left-bracket {
-    border: 0.5rem solid rgb(255, 255, 255);
+    border: 0.5rem solid var(--foreground-color);
     border-right: none;
-    width: 1rem;
-    position: relative;
-    right: -1rem;
+    width: 1.5rem;
+    height: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
     flex-shrink: 0;
+    pointer-events: none;
 }
 
 .matrix-right-bracket {
-    border: 0.5rem solid rgb(255, 255, 255);
+    border: 0.5rem solid var(--foreground-color);
     border-left: none;
-    width: 1rem;
-    position: relative;
-    left: -1rem;
+    width: 1.5rem;
+    height: 100%;
+    position: absolute;
+    right: 0;
     flex-shrink: 0;
-}
+    pointer-events: none;
 
+}
 
 .matrix-element {
     border: none;
-    background-color: rgb(20, 22, 26);
+    /* background-color: rgb(20, 22, 26); */
+    background-color: var(--ui-color);
     color: white;
     display: block;
     margin: 0;
     border-radius: 0.5rem;
     font-family: "Nunito", sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     padding: 0.5rem;
-    width: 6rem;
+    width: 5rem;
     text-align: center;
-    caret-color: rgb(208, 255, 0);
+    caret-color: var(--theme-color);
+    overflow: scroll;
 }
 
 .matrix-element:hover {
-    background-color: rgb(27, 30, 36);
+    background-color: var(--ui-hover-color);
 }
 
 .matrix-element:focus {
-    outline: 0.2rem solid rgb(208, 255, 0); /* rgb(208, 255, 0) */
-    background-color: rgb(27, 30, 36);
+    outline: 0.2rem solid var(--theme-color); /* rgb(208, 255, 0) */
+    background-color: var(--ui-hover-color);
+}
+
+.matrix-scalar {
+    border: none;
+    background-color: var(--ui-color);
+    color: var(--foreground-color);
+    display: block;
+    margin: 0;
+    border-radius: 0.5rem;
+    font-family: "Nunito", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 0.5rem;
+    width: 3rem;
+    text-align: center;
+    caret-color: var(--theme-color);
+    height: fit-content;
+}
+
+.matrix-scalar:hover {
+    background-color: var(--ui-hover-color);
+}
+
+.matrix-scalar:focus {
+    outline: 0.2rem solid var(--theme-color); /* rgb(208, 255, 0) */
+    background-color: var(--ui-hover-color);
 }
 
 /* Remove number scrubber */
@@ -87,4 +191,78 @@ input[type=number]::-webkit-outer-spin-button {
 /* Firefox */
 input[type=number] {
     -moz-appearance: textfield;
+}
+
+
+
+/******* MATRIX BUTTON STYLES *******/
+.matrix-control-button {
+    border: none;
+    background-color: var(--ui-color);
+    color: var(--foreground-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+
+.matrix-control-button-vertical {
+    width: 2rem;
+    height: 3rem;
+}
+
+.matrix-control-button-horizontal {
+    width: 3rem;
+    height: 2rem;
+}
+
+.matrix-control-button:hover {
+    background-color: var(--ui-hover-color);
+    cursor: pointer;
+}
+
+.matrix-control-button:active {
+    .matrix-control-button-icon {
+        opacity: 0.6;
+    }
+}
+
+.matrix-control-button:focus-visible {
+    outline: 0.2rem solid var(--theme-color);
+    background-color: var(--ui-hover-color);
+} 
+
+.matrix-control-button-icon {
+    fill: var(--foreground-color);
+    width: 2rem;
+    height: 2rem;
+}
+
+
+
+/******* ERROR MESSAGE STYLES *******/
+.section-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-message-banner {
+    display: none;
+    margin: 2rem;
+    background-color: rgba(255, 0, 0, 0.2);
+    /* justify-self: center; */
+    align-items: center;
+    gap: 1rem;
+    padding: 0 2rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    color: var(--foreground-color);
+    text-align: left;
+}
+
+.error-message-icon {
+    fill: rgb(255, 0, 0);
+    width: 2rem;
+    height: 2rem;
 }
